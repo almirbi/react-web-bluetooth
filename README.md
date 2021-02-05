@@ -45,7 +45,8 @@ _Returns:_
 
 _Params:_
 
-`service`: BluetoothGATTService, bluetoothCharacteristicUUID
+`service`: [BluetoothRemoteGATTService](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService)
+`bluetoothCharacteristicUUID`: string
 
 _Returns:_
 
