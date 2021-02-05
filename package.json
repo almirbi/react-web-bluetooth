@@ -2,14 +2,15 @@
   "name": "react-web-bluetooth",
   "version": "1.0.0",
   "description": "React hooks wrapper for the Web Bluetooth API",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
   },
-  "author": "",
+  "author": "Almir Bijedic",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^17.0.0",
@@ -21,6 +22,10 @@
   },
   "dependencies": {
     "react": "^17.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/almirbi/react-web-bluetooth.git"
   },
   "files": [
     "lib/**/*"
