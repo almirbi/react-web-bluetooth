@@ -26,3 +26,73 @@ return <>
   {device && <span>{device.name}</span>}
 </>
 ```
+
+# API
+
+### `useGetServer`
+
+_Params:_
+
+`device`: [BluetoothDevice](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice)
+
+_Returns:_
+
+`server`: [BluetoothRemoteGATTServer](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer)
+
+<br/>
+
+### `useGetCharacteristic`
+
+_Params:_
+
+`service`: BluetoothGATTService, bluetoothCharacteristicUUID
+
+_Returns:_
+
+`characteristic`: [BluetoothRemoteGATTCharacteristic](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic)
+
+<br/>
+
+### `useGetDevices`
+
+_Returns:_ `devices[]`: BluetoothDevice[]
+
+### `useRequestDevice`
+
+_Params:_
+
+`options`: https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/requestDevice#parameters
+
+_Returns:_
+
+`onClick`: (event) => void // returns a onClick function that can be used to trigget the browser's pairing window and list the scanned Bluetooth devices.
+
+`device`: BluetoothDevice // returns a device chosen from the Bluetooth pairing dialogue.
+
+### `useGetPrimaryService`
+
+_Params:_
+
+`device`: BluetoothDevice
+
+_Returns:_
+
+`service`: [BluetoothRemoteGATTService](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService)
+
+### `useReadValue`
+
+_Params:_
+
+`characteristic`: [BluetoothRemoteGATTCharacteristic](BluetoothRemoteGATTCharacteristic)
+
+_Returns:_:
+
+`value`: [DataView](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
+
+### `writeValue`
+
+_Params:_
+
+`characteristic`: [BluetoothRemoteGATTCharacteristic](BluetoothRemoteGATTCharacteristic)
+
+`value`: [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
