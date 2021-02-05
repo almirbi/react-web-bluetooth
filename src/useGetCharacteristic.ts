@@ -1,26 +1,20 @@
-import React from "react";
+import React from 'react'
 
 function useGetCharacteristic(
   service: BluetoothRemoteGATTService | undefined,
-  bluetoothCharacteristicUUID: BluetoothCharacteristicUUID
+  bluetoothCharacteristicUUID: BluetoothCharacteristicUUID,
 ) {
-  const [
-    characteristic,
-    setCharacteristic,
-  ] = React.useState<BluetoothRemoteGATTCharacteristic>();
+  const [characteristic, setCharacteristic] = React.useState<BluetoothRemoteGATTCharacteristic>()
 
   async function getCharacteristic() {
     if (service) {
-      const characteristic = await service.getCharacteristic(
-        bluetoothCharacteristicUUID
-      );
-      setCharacteristic(characteristic);
+      setCharacteristic(await service.getCharacteristic(bluetoothCharacteristicUUID))
     }
   }
 
-  getCharacteristic();
+  getCharacteristic()
 
-  return characteristic;
+  return characteristic
 }
 
-export default useGetCharacteristic;
+export default useGetCharacteristic

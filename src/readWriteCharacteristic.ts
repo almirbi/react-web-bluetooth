@@ -1,39 +1,26 @@
-import React from "react";
+import React from 'react'
 
-function writeValue(
-  characteristic: BluetoothRemoteGATTCharacteristic | undefined,
-  value: BufferSource
-) {
-  async function writeValue() {
-    try {
-      await characteristic?.writeValue(value);
-    } catch (e) {
-      console.log(e.message);
-    }
+function writeValue(characteristic: BluetoothRemoteGATTCharacteristic | undefined, value: BufferSource) {
+  async function writeValueAsync() {
+    await characteristic?.writeValue(value)
   }
 
-  writeValue();
+  writeValueAsync()
 }
 
-function useReadValue(
-  characteristic: BluetoothRemoteGATTCharacteristic | undefined
-) {
-  const [value, setValue] = React.useState<DataView>();
+function useReadValue(characteristic: BluetoothRemoteGATTCharacteristic | undefined) {
+  const [value, setValue] = React.useState<DataView>()
   React.useEffect(() => {
     async function readValue() {
-      try {
-        if (characteristic) {
-          setValue(await characteristic.readValue());
-        }
-      } catch (e) {
-        console.log(e.message);
+      if (characteristic) {
+        setValue(await characteristic.readValue())
       }
     }
 
-    readValue();
-  }, [characteristic]);
+    readValue()
+  }, [characteristic])
 
-  return value;
+  return value
 }
 
-export { writeValue, useReadValue };
+export { writeValue, useReadValue }

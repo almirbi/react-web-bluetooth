@@ -1,23 +1,22 @@
-import React from "react";
+import React from 'react'
 
 function useGetPrimaryService(
   server: BluetoothRemoteGATTServer | undefined,
-  bluetoothServiceUUID: BluetoothServiceUUID
+  bluetoothServiceUUID: BluetoothServiceUUID,
 ) {
-  const [service, setService] = React.useState<BluetoothRemoteGATTService>();
+  const [service, setService] = React.useState<BluetoothRemoteGATTService>()
 
   React.useEffect(() => {
     async function getPrimaryService() {
       if (server) {
-        const service = await server.getPrimaryService(bluetoothServiceUUID);
-        setService(service);
+        setService(await server.getPrimaryService(bluetoothServiceUUID))
       }
     }
 
-    getPrimaryService();
-  }, [server, bluetoothServiceUUID]);
+    getPrimaryService()
+  }, [server, bluetoothServiceUUID])
 
-  return service;
+  return service
 }
 
-export default useGetPrimaryService;
+export default useGetPrimaryService

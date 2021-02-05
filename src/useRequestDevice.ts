@@ -1,20 +1,16 @@
-import React from "react";
+import React from 'react'
 
 function useRequestDevice(options?: RequestDeviceOptions) {
-  const [device, setDevice] = React.useState<BluetoothDevice | undefined>(
-    undefined
-  );
+  const [device, setDevice] = React.useState<BluetoothDevice | undefined>(undefined)
   const onClick = React.useCallback(() => {
     async function getDevice() {
-      let device = await navigator.bluetooth.requestDevice(options);
-
-      setDevice(device);
+      setDevice(await navigator.bluetooth.requestDevice(options))
     }
 
-    getDevice();
-  }, [options]);
+    getDevice()
+  }, [options])
 
-  return { device, onClick };
+  return { device, onClick }
 }
 
-export default useRequestDevice;
+export default useRequestDevice
