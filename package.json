@@ -9,7 +9,8 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prepublish": "npm run build"
   },
   "author": "Almir Bijedic",
   "license": "ISC",
