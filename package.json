@@ -28,5 +28,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/almirbi/react-web-bluetooth.git"
+  },
+  "homepage": "https://github.com/almirbi/react-web-bluetooth",
+  "bugs": {
+    "url": "https://github.com/almirbi/react-web-bluetooth/issues"
   }
 }
